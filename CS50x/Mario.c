@@ -1,27 +1,35 @@
 #include <stdio.h>
 
 void pyramid(int row) {
-    for(int i = 1;i <= row;i++) {
-        for(int j = row;j > 0;j--) {
-            if(j > i) {
-                printf(" ");
+    if(row <= 0) {
+        printf("Can't make a Pyramid with that number");
+    }
+    else {
+        for(int i = 1;i <= row;i++) {
+            for(int j = row;j > 0;j--) {
+                if(j > i) {
+                    printf(" ");
+                }
+                else {
+                    printf("#");
+                }
             }
-            else {
+            printf(" ");
+            for(int k = 1;k <= i;k++) {
                 printf("#");
             }
+            printf("\n");
         }
-        printf(" ");
-        for(int k = 1;k <= i;k++) {
-            printf("#");
-        }
-        printf("\n");
     }
 }
 
 int main() {
     int row;
     printf("How many rows: ");
-    scanf("%d", &row);
+    if(scanf("%d", &row) != 1) {
+        printf("Invalid Input!");
+        return 1;
+    }
     pyramid(row);
     return 0;
 }
