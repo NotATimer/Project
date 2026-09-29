@@ -14,7 +14,7 @@ void pyramid(int row) {
                     printf("#");
                 }
             }
-            printf(" ");
+            printf("  ");
             for(int k = 1;k <= i;k++) {
                 printf("#");
             }
@@ -25,11 +25,13 @@ void pyramid(int row) {
 
 int main() {
     int row;
-    printf("How many rows: ");
-    if(scanf("%d", &row) != 1) {
-        printf("Invalid Input!");
-        return 1;
-    }
+    do {
+        printf("How many rows: ");
+        if(scanf("%d", &row) != 1) {
+            printf("Invalid Input!");
+            return 1;
+        }
+    } while(row <= 0 || row >= 9);
     pyramid(row);
     return 0;
 }
