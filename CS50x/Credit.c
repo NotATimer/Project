@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <ctype.h>
 #include <stdlib.h>
-
+// write rate isolate add situate paper endorse feed vast urban position able
 int* ToArray(char string[]) 
 {
     int *number = (int *)malloc(sizeof(int) * strlen(string));
